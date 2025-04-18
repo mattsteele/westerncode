@@ -1,0 +1,61 @@
+---
+import Sun from "../assets/svgs/sun.svg";
+import MoonStars from "../assets/svgs/moon-stars.svg";
+---
+
+<theme-toggle>
+	<button
+		class="text-gray-800 hover:text-rose-700 dark:text-white dark:hover:text-gray-300 hover:cursor-pointer"
+		@click="toggleTheme()"
+	>
+		<span class="sr-only">Toggle theme</span>
+		<span class="hidden dark:block">
+			<Sun width="28px" height="28px" />
+		</span>
+
+		<span class="dark:hidden">
+			<MoonStars width="28px" height="28px" />
+		</span>
+	</button>
+</theme-toggle>
+
+<script>
+	class ThemeToggle extends HTMLElement {
+		constructor() {
+			super();
+			if (typeof window === "undefined") return;
+			const button = this.querySelector("button");
+
+			const applyTheme = (theme: string) => {
+				document.documentElement.classList.remove("dark", "light");
+				document.documentElement.classList.add(theme);
+				document.documentElement.setAttribute("data-theme", theme);
+				localStorage.setItem("theme", theme);
+			};
+
+			const getPreferredTheme = () => {
+				if (localStorage.getItem("theme")) {
+					return localStorage.getItem("theme");
+				}
+				return window.matchMedia("(prefers-color-scheme: dark)").matches
+					? "dark"
+					: "light";
+			};
+
+			if (button) {
+				button.addEventListener("click", () => {
+					const currentTheme = document.documentElement.classList.contains(
+						"dark"
+					)
+						? "dark"
+						: "light";
+					applyTheme(currentTheme === "dark" ? "light" : "dark");
+				});
+			}
+
+			applyTheme(getPreferredTheme() ?? "light");
+		}
+	}
+
+	customElements.define("theme-toggle", ThemeToggle);
+</script>

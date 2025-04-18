@@ -1,11 +1,59 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import OfficeBackground from "../assets/images/office.jpg";
 ---
 
 <Layout>
-	<Welcome />
+	<div class="flex justify-center items-center">
+		<div class="relative mx-10 my-12 md:my-16">
+			<Image
+				src={OfficeBackground}
+				width={1400}
+				height={800}
+				alt="Western Code Office"
+				format="webp"
+				fetchpriority="high"
+				decoding="async"
+			/>
+
+			<h1
+				class="absolute
+				text-slate-800
+				uppercase
+				font-semibold
+				top-8
+				md:top-18
+				left-2
+				md:left-6
+				text-3xl/9.75
+				md:text-5xl/15
+				fade-in"
+			>
+				<span class="bg-white/60 px-2 py-0.5 md:py-0.625"
+					>Modern Software Development</span
+				><br />
+				<span class="bg-white/60 px-2 py-0.5 md:py-0.625"
+					>for Agencies &amp; Businesses</span
+				>
+			</h1>
+		</div>
+	</div>
 </Layout>
+
+<style>
+	.fade-in {
+		animation: fade-in 0.75s ease-in-out;
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>

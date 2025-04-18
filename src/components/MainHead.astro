@@ -1,0 +1,35 @@
+---
+import "../assets/styles/globals.css";
+
+interface Props {
+	title?: string | undefined;
+	description?: string | undefined;
+}
+
+const {
+	title = "Western Code | Modern Software Development for Agencies & Businesses",
+	description = "Modern Software Development for Agencies & Businesses",
+} = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="description" property="og:description" content={description} />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
+
+{typeof window !== "undefined" && (
+	<script is:inline>
+		const theme = localStorage.getItem("theme");
+		if (
+			theme === "dark" ||
+			(!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+		) {
+			document.documentElement.classList.add("dark");
+		} else {
+			document.documentElement.classList.remove("dark");
+		}
+	</script>
+)}
