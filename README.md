@@ -1,8 +1,6 @@
 # Western Code
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/914fbc5e-8ac8-4ab4-bf4a-383de2e04384/deploy-status)](https://app.netlify.com/sites/nervous-tereshkova-51eccf/deploys)
-
-My [business site](https://westerncode.com) built with [Astro](https://astro.build/) &amp; [TailwindCSS](https://tailwindcss.com/). Hosted on [Netlify](https://netlify.com/).
+My [business site](https://westerncode.com) built with [Astro](https://astro.build/) &amp; [TailwindCSS](https://tailwindcss.com/). Hosted on [Cloudflare](https://www.cloudflare.com/).
 
 ## 🧞 Commands
 
