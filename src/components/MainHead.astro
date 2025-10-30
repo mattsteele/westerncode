@@ -1,35 +1,42 @@
 ---
 import "../assets/styles/globals.css";
+import StructuredData from "./StructuredData.astro";
 
 interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
+	image?: string | undefined;
 }
 
 const {
 	title = "Western Code | Modern Software Development for Agencies & Businesses",
 	description = "Modern Software Development for Agencies & Businesses",
+	image = "/favicon/android-chrome-512x512.png",
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
-<meta name="viewport" content="width=device-width" />
+<meta name="description" content={description} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="generator" content={Astro.generator} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.site)} />
+<meta property="og:site_name" content="Western Code" />
+
 <title>{title}</title>
 
-<link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.manifest.json" />
 
-{typeof window !== "undefined" && (
-	<script is:inline>
-		const theme = localStorage.getItem("theme");
-		if (
-			theme === "dark" ||
-			(!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-		) {
-			document.documentElement.classList.add("dark");
-		} else {
-			document.documentElement.classList.remove("dark");
-		}
-	</script>
-)}
+<StructuredData />

@@ -5,47 +5,23 @@ import OfficeBackground from "../assets/images/office.jpg";
 ---
 
 <Layout>
-	<div class="flex justify-center items-center">
-		<div class="relative mx-10 my-12 md:my-16">
-			<Image src={OfficeBackground} alt="Western Code Office" />
+	<section class="flex justify-center items-center px-4 sm:px-6 lg:px-8">
+		<div class="relative w-full max-w-6xl mx-auto my-8 sm:my-12 md:my-16">
+			<Image 
+				src={OfficeBackground} 
+				alt="Modern office workspace representing Western Code's professional development environment"
+				class="w-full h-auto rounded-lg shadow-lg"
+				widths={[320, 640, 768, 1024, 1280]}
+				sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 80vw"
+				format="webp"
+				quality={85}
+				loading="eager"
+			/>
 
-			<h1
-				class="absolute
-				text-slate-800
-				uppercase
-				font-semibold
-				top-8
-				md:top-18
-				left-2
-				md:left-6
-				text-3xl/9.75
-				md:text-5xl/15
-				fade-in"
-			>
-				<span class="bg-white/60 px-2 py-0.5 md:py-0.625"
-					>Modern Software Development</span
-				><br />
-				<span class="bg-white/60 px-2 py-0.5 md:py-0.625"
-					>for Agencies &amp; Businesses</span
-				>
+			<h1 class="hero-title absolute top-4 sm:top-6 md:top-8 lg:top-12 left-2 sm:left-4 md:left-6 text-slate-800 uppercase font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight">
+				<span class="hero-text-bg">Modern Software Development</span><br />
+				<span class="hero-text-bg">for Agencies &amp; Businesses</span>
 			</h1>
 		</div>
-	</div>
+	</section>
 </Layout>
-
-<style>
-	.fade-in {
-		animation: fade-in 0.75s ease-in-out;
-	}
-
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-			transform: translateY(20px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-</style>

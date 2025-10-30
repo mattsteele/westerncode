@@ -1,0 +1,43 @@
+---
+interface Props {
+  type?: 'Organization' | 'WebSite';
+}
+
+const { type = 'Organization' } = Astro.props;
+
+const organizationData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Western Code",
+  "url": "https://westerncode.com",
+  "description": "Modern Software Development for Agencies & Businesses",
+  "foundingDate": "2024",
+  "serviceArea": {
+    "@type": "Place",
+    "name": "Worldwide"
+  },
+  "areaServed": "Worldwide",
+  "knowsAbout": [
+    "Software Development",
+    "Web Development",
+    "Agency Services",
+    "Business Solutions"
+  ]
+};
+
+const websiteData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Western Code",
+  "url": "https://westerncode.com",
+  "description": "Modern Software Development for Agencies & Businesses",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Western Code"
+  }
+};
+
+const structuredData = type === 'Organization' ? organizationData : websiteData;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

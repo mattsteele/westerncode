@@ -6,8 +6,24 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      cssMinify: 'lightningcss',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['astro/transitions']
+          }
+        }
+      }
+    }
   },
   compressHTML: true,
-  site: 'https://www.westerncode.com',
+  site: 'https://westerncode.com',
+  build: {
+    inlineStylesheets: 'auto'
+  },
+  image: {
+    remotePatterns: [{ protocol: "https" }]
+  }
 });
