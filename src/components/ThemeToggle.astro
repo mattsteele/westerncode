@@ -1,6 +1,6 @@
 ---
-import Sun from "../assets/svgs/sun.svg";
-import MoonStars from "../assets/svgs/moon-stars.svg";
+import Sun from "@/assets/svgs/sun.svg";
+import MoonStars from "@/assets/svgs/moon-stars.svg";
 ---
 
 <theme-toggle>
@@ -19,7 +19,7 @@ import MoonStars from "../assets/svgs/moon-stars.svg";
 </theme-toggle>
 
 <script>
-	import { applyTheme, getPreferredTheme } from "../utils/theme";
+	import { applyTheme } from "@/utils/theme";
 
 	class ThemeToggle extends HTMLElement {
 		constructor() {
