@@ -8,14 +8,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     build: {
-      cssMinify: 'lightningcss',
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            vendor: ['astro/transitions']
-          }
-        }
-      }
+      cssMinify: 'lightningcss'
     }
   },
   compressHTML: true,
@@ -24,7 +17,6 @@ export default defineConfig({
     inlineStylesheets: 'auto'
   },
   image: {
-    service: 'sharp',
     remotePatterns: [{ protocol: "https" }]
   }
 });
