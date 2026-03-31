@@ -6,6 +6,7 @@
   </defs>
 
   <style>
+    :root { color-scheme: only dark }
     .wc-white { fill: #ffffff; fill-rule: nonzero }
   </style>
 
