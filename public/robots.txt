@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://westerncode.com/sitemap-index.xml

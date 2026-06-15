@@ -4,14 +4,16 @@ import WesternCodeLogo from "@/assets/svgs/westerncode.svg";
 import WesternCodeLogoReverse from "@/assets/svgs/westerncode-reverse.svg";
 ---
 
-<nav class="flex justify-between p-4">
-	<div class="self-start px-6">
-		<span class="sr-only">Western Code</span>
-		<WesternCodeLogo class="dark:hidden" width="180px" />
-		<WesternCodeLogoReverse class="hidden dark:block" width="180px" />
-	</div>
+<header>
+	<nav class="flex justify-between p-4">
+		<div class="self-start px-6">
+			<span class="sr-only">Western Code</span>
+			<WesternCodeLogo class="dark:hidden" width={180} />
+			<WesternCodeLogoReverse class="hidden dark:block" width={180} />
+		</div>
 
-	<div class="px-6 flex flex-col justify-center">
-		<ThemeToggle />
-	</div>
-</nav>
+		<div class="px-6 flex flex-col justify-center">
+			<ThemeToggle />
+		</div>
+	</nav>
+</header>

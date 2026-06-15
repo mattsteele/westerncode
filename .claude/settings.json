@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const v=require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\); const arr=JSON.parse\\(v\\); console.log\\(arr.filter\\(x=>x.startsWith\\('8'\\)\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(node -e \"const pkg=require\\('./node_modules/vite/package.json'\\); console.log\\('vite deps:', JSON.stringify\\(pkg.dependencies||{}, null, 2\\)\\)\")",
+      "Bash(npm uninstall *)",
+      "Bash(npm audit *)",
+      "Bash(npm approve-scripts *)"
+    ]
+  }
+}

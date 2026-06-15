@@ -1,15 +1,11 @@
 ---
-interface Props {
-  type?: 'Organization' | 'WebSite';
-}
-
-const { type = 'Organization' } = Astro.props;
+const siteUrl = Astro.site?.toString().replace(/\/$/, "");
 
 const organizationData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Western Code",
-  "url": "https://westerncode.com",
+  "url": siteUrl,
   "description": "Modern Software Development for Agencies & Businesses",
   "foundingDate": "2024",
   "serviceArea": {
@@ -29,15 +25,14 @@ const websiteData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Western Code",
-  "url": "https://westerncode.com",
+  "url": siteUrl,
   "description": "Modern Software Development for Agencies & Businesses",
   "publisher": {
     "@type": "Organization",
     "name": "Western Code"
   }
 };
-
-const structuredData = type === 'Organization' ? organizationData : websiteData;
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(organizationData)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(websiteData)} />
