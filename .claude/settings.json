@@ -5,7 +5,8 @@
       "Bash(node -e \"const pkg=require\\('./node_modules/vite/package.json'\\); console.log\\('vite deps:', JSON.stringify\\(pkg.dependencies||{}, null, 2\\)\\)\")",
       "Bash(npm uninstall *)",
       "Bash(npm audit *)",
-      "Bash(npm approve-scripts *)"
+      "Bash(npm approve-scripts *)",
+      "Bash(node -e ' *)"
     ]
   }
 }
