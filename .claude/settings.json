@@ -6,7 +6,11 @@
       "Bash(npm uninstall *)",
       "Bash(npm audit *)",
       "Bash(npm approve-scripts *)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/astro/package.json'\\).peerDependencies\\)\")",
+      "Bash(npm ls *)",
+      "Bash(git -C /Users/mattsteele/Projects/westerncode add .)",
+      "Bash(git -C /Users/mattsteele/Projects/westerncode status)"
     ]
   }
 }
