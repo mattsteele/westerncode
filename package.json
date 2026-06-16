@@ -7,13 +7,16 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check"
   },
-  "devDependencies": {
+"devDependencies": {
+    "@astrojs/check": "^0.9.9",
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^6.4.7",
-    "tailwindcss": "^4.3.1"
+    "tailwindcss": "^4.3.1",
+    "typescript": "^6.0.3"
   },
   "allowScripts": {
     "esbuild@0.27.7": true,

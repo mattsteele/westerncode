@@ -10,7 +10,12 @@
       "Bash(node -e \"console.log\\(require\\('./node_modules/astro/package.json'\\).peerDependencies\\)\")",
       "Bash(npm ls *)",
       "Bash(git -C /Users/mattsteele/Projects/westerncode add .)",
-      "Bash(git -C /Users/mattsteele/Projects/westerncode status)"
+      "Bash(git -C /Users/mattsteele/Projects/westerncode status)",
+      "Bash(find /Users/mattsteele/Projects -name \"package.json\" -not -path \"*/node_modules/*\" -not -path \"*/.git/*\" | grep -i portfolio | head -5)",
+      "Read(//Users/mattsteele/Projects/**)"
+    ],
+    "additionalDirectories": [
+      "/Users/mattsteele/Projects/mattsteele"
     ]
   }
 }
