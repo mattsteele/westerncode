@@ -5,12 +5,12 @@ import OfficeBackground from "@/assets/images/office.jpg";
 ---
 
 <Layout>
-	<section class="flex justify-center items-center px-4 sm:px-6 lg:px-8">
-		<div class="relative w-full max-w-6xl mx-auto my-8 sm:my-12 md:my-16">
+	<section class="flex items-center justify-center px-4 sm:px-6 lg:px-8">
+		<div class="relative mx-auto my-8 w-full max-w-6xl sm:my-12 md:my-16">
 			<Image
 				src={OfficeBackground}
 				alt="Modern office workspace representing Western Code's professional development environment"
-				class="w-full h-auto rounded-lg shadow-lg"
+				class="h-auto w-full rounded-lg shadow-lg"
 				widths={[320, 640, 768, 1024, 1280]}
 				sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 80vw"
 				format="webp"
@@ -19,7 +19,9 @@ import OfficeBackground from "@/assets/images/office.jpg";
 				fetchpriority="high"
 			/>
 
-			<h1 class="hero-title absolute top-4 sm:top-6 md:top-8 lg:top-12 left-2 sm:left-4 md:left-6 text-slate-800 uppercase font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight">
+			<h1
+				class="hero-title absolute top-4 left-2 text-xl leading-tight font-semibold text-slate-800 uppercase sm:top-6 sm:left-4 sm:text-2xl md:top-8 md:left-6 md:text-3xl lg:top-12 lg:text-4xl xl:text-5xl"
+			>
 				<span class="hero-text-bg">Modern Software Development</span><br />
 				<span class="hero-text-bg">for Agencies &amp; Businesses</span>
 			</h1>

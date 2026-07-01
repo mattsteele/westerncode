@@ -2,37 +2,45 @@
 const siteUrl = Astro.site?.toString().replace(/\/$/, "");
 
 const organizationData = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Western Code",
-  "url": siteUrl,
-  "description": "Modern Software Development for Agencies & Businesses",
-  "foundingDate": "2024",
-  "serviceArea": {
-    "@type": "Place",
-    "name": "Worldwide"
-  },
-  "areaServed": "Worldwide",
-  "knowsAbout": [
-    "Software Development",
-    "Web Development",
-    "Agency Services",
-    "Business Solutions"
-  ]
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	name: "Western Code",
+	url: siteUrl,
+	description: "Modern Software Development for Agencies & Businesses",
+	foundingDate: "2024",
+	serviceArea: {
+		"@type": "Place",
+		name: "Worldwide",
+	},
+	areaServed: "Worldwide",
+	knowsAbout: [
+		"Software Development",
+		"Web Development",
+		"Agency Services",
+		"Business Solutions",
+	],
 };
 
 const websiteData = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Western Code",
-  "url": siteUrl,
-  "description": "Modern Software Development for Agencies & Businesses",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Western Code"
-  }
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	name: "Western Code",
+	url: siteUrl,
+	description: "Modern Software Development for Agencies & Businesses",
+	publisher: {
+		"@type": "Organization",
+		name: "Western Code",
+	},
 };
 ---
 
-<script is:inline type="application/ld+json" set:html={JSON.stringify(organizationData)} />
-<script is:inline type="application/ld+json" set:html={JSON.stringify(websiteData)} />
+<script
+	is:inline
+	type="application/ld+json"
+	set:html={JSON.stringify(organizationData)}
+/>
+<script
+	is:inline
+	type="application/ld+json"
+	set:html={JSON.stringify(websiteData)}
+/>

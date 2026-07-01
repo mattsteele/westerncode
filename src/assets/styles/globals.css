@@ -18,5 +18,5 @@
 }
 
 @utility hero-text-bg {
-	@apply bg-white/60 px-2 py-1 md:py-1.5 backdrop-blur-sm rounded-sm;
+	@apply rounded-sm bg-white/60 px-2 py-1 backdrop-blur-sm md:py-1.5;
 }
