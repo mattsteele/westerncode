@@ -7,6 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   integrations: [sitemap()],
   output: 'static',
+  prefetch: true,
   vite: {
     plugins: [tailwindcss()],
     build: {
