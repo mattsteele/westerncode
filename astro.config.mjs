@@ -7,6 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
 	integrations: [sitemap()],
 	output: "static",
+	trailingSlash: "always",
 	prefetch: true,
 	vite: {
 		plugins: [tailwindcss()],
@@ -18,8 +19,5 @@ export default defineConfig({
 	site: "https://westerncode.com",
 	build: {
 		inlineStylesheets: "auto",
-	},
-	image: {
-		remotePatterns: [{ protocol: "https" }],
 	},
 });
