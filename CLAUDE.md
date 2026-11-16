@@ -22,7 +22,7 @@ npm run check      # Astro + TypeScript type checking
 - Always use the latest stable versions of all packages
 - Use `@tailwindcss/vite` (NOT `@tailwindcss/postcss`) — it is the recommended Tailwind v4 approach for Vite-based frameworks
 - When `@tailwindcss/vite` and Astro resolve to different Vite majors, add `"overrides": { "vite": "^X" }` to align them. Check with `npm ls vite` after installing
-- `allowScripts` in `package.json` is required for `fsevents` and `sharp`. `esbuild` no longer appears in the dependency tree as of Vite 8 (which moved to rolldown internally) — don't re-add it unless something reintroduces a real esbuild install script
+- `allowScripts` in `package.json` is required for `fsevents` — it's the only dependency with an actual install script. `esbuild` and `sharp` no longer need entries (Vite 8 moved to rolldown internally, dropping esbuild; `sharp`'s prebuilt binaries now resolve via plain optional dependencies with no postinstall script) — don't re-add either unless something reintroduces a real install script
 
 ## File Structure
 
